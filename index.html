@@ -1,17 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mohammad Abraar — Security • AI • Builder</title>
+  <title>Your Name — Security • AI • Builder</title>
   <meta name="description" content="Security engineer & lifelong learner. Projects, notes, and contact." />
-  <meta property="og:title" content="Mohammad Abraar — Security • AI • Builder" />
+  <meta property="og:title" content="Your Name — Security • AI • Builder" />
   <meta property="og:description" content="Security engineer & lifelong learner. Projects, notes, and contact." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/assets/og.png" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%94%92%3C/text%3E%3C/svg%3E" />
   <style>
-    :root {
+    :root { color-scheme: light dark; }
+    [data-theme="dark"] {
       --bg: #0b0d10;
       --panel: #101318;
       --text: #e6ebf2;
@@ -23,8 +24,17 @@
       --maxw: 920px;
       --gradient: linear-gradient(135deg, #7c9cff, #2bd4bd);
     }
-    @media (prefers-color-scheme: light) {
-      :root { --bg: #f8fafc; --panel:#ffffff; --text:#101318; --subtext:#4b5568; --border:#e6eaf0; --link:#335dff; --gradient: linear-gradient(135deg, #335dff, #2bd4bd); }
+    [data-theme="light"] {
+      --bg: #f8fafc;
+      --panel:#ffffff;
+      --text:#101318;
+      --subtext:#4b5568;
+      --border:#e6eaf0;
+      --link:#335dff;
+      --maxw: 920px;
+      --accent: #335dff;
+      --accent-2: #2bd4bd;
+      --gradient: linear-gradient(135deg, #335dff, #2bd4bd);
     }
     * { box-sizing: border-box; }
     html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font: 16px/1.65 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, 'Helvetica Neue', Arial, 'Apple Color Emoji', 'Segoe UI Emoji'; }
@@ -34,11 +44,13 @@
     header { position: sticky; top: 0; backdrop-filter: saturate(180%) blur(8px); background: var(--gradient); border-bottom: 1px solid var(--border); z-index: 10; color:#fff; }
     nav { display: flex; align-items: center; justify-content: space-between; max-width: var(--maxw); margin: 0 auto; padding: 12px 24px; }
     .brand { font-weight: 700; letter-spacing: .2px; }
+    .nav-right { display:flex; align-items:center; gap:12px; }
     .nav-links { display: flex; gap: 18px; }
     .nav-links a { color: #fff; font-weight: 500; }
+    .theme-toggle { border:1px solid #ffffff33; background:#ffffff1a; color:#fff; border-radius:999px; padding:6px 10px; font-size:.9rem; cursor:pointer; }
     .badge { display:inline-flex; align-items:center; gap:.35rem; padding: 6px 10px; border-radius: 999px; background: var(--gradient); color: #fff; font-size: .9rem; }
     .hero { display: grid; gap: 12px; padding: 60px 0 24px; text-align:center; }
-    .hero h1 { font-size: clamp(28px, 5vw, 48px); line-height: 1.1; margin: 0; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero h1 { font-size: clamp(28px, 5vw, 48px); line-height: 1.1; margin: 0; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip:text; color: transparent; }
     .hero p { color: var(--subtext); margin: 0 auto; max-width: 680px; }
     .pill-row { display:flex; flex-wrap:wrap; gap:10px; margin-top: 20px; justify-content:center; }
     .pill { border:1px solid var(--border); background: var(--panel); border-radius:999px; padding: 8px 14px; font-size:.9rem; color:var(--subtext); transition: all 0.3s ease; }
@@ -71,11 +83,14 @@
   <header>
     <nav aria-label="Primary">
       <div class="brand">Your Name</div>
-      <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="/blog/index.html">Blog</a>
-        <a href="#contact">Contact</a>
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#projects">Projects</a>
+          <a href="/blog/index.html">Blog</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <button id="theme-toggle" class="theme-toggle" type="button">🌙</button>
       </div>
     </nav>
   </header>
@@ -83,8 +98,8 @@
   <main class="wrap" id="home">
     <section class="hero" aria-labelledby="hero-title">
       <span class="badge" aria-label="Tagline">🔐 Security • 🤖 AI • 🛠️ Builder</span>
-      <h1 id="hero-title">Hi, I’m <strong>Abraar</strong> — security engineer, OSS tinkerer, and lifelong student.</h1>
-      <p>I document my learnings & notes on a tiny blog and vibe code scrappy projects for fun. This page is a quick snapshot of what I’m up to and where to find me.</p>
+      <h1 id="hero-title">Hi, I’m <strong>Your Name</strong> — security engineer, OSS tinkerer, and lifelong student.</h1>
+      <p>I document my notes on a tiny blog and ship scrappy projects for fun. This page is a quick snapshot of what I’m up to and where to find me.</p>
       <div class="pill-row" role="list" aria-label="Quick links">
         <a class="pill" href="https://github.com/YOURUSER" target="_blank" rel="noopener">GitHub</a>
         <a class="pill" href="https://www.linkedin.com/in/YOURUSER" target="_blank" rel="noopener">LinkedIn</a>
@@ -203,6 +218,23 @@
   </main>
 
   <script>
+    const key = 'theme-choice';
+    const stored = localStorage.getItem(key);
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initial = stored || (prefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', initial);
+
+    const btn = document.getElementById('theme-toggle');
+    function renderIcon(mode){ btn.textContent = mode === 'dark' ? '🌙' : '☀️'; }
+    renderIcon(initial);
+    btn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem(key, next);
+      renderIcon(next);
+    });
+
     document.getElementById('y').textContent = new Date().getFullYear();
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', (e) => {
